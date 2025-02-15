@@ -12,6 +12,8 @@ def main():
 	dt = 0
 
 	player = Player(SCREEN_WIDTH/2, SCREEN_HEIGHT/2)
+	updatable = [player]
+	drawable = [player]
 
 	screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 	while True:
@@ -20,9 +22,16 @@ def main():
 					return
 		dt = Clock.tick(60) / 1000
 		screen.fill((0, 0, 0))
-		player.draw(screen)
-		player.update(dt)
+		
+		for player in drawable:
+			player.draw(screen)
+
+		for player in updatable:
+			player.update(dt)
+
 		pygame.display.flip()
+	
+
 	
 if __name__ == "__main__":
 	main()
