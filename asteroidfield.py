@@ -5,7 +5,6 @@ from constants import *
 
 
 class AsteroidField(pygame.sprite.Sprite):
-    containers = []
     edges = [
         [
             pygame.Vector2(1, 0),
@@ -29,7 +28,7 @@ class AsteroidField(pygame.sprite.Sprite):
         ],
     ]
 
-    def __init__(self   ):
+    def __init__(self):
         pygame.sprite.Sprite.__init__(self, self.containers)
         self.spawn_timer = 0.0
 
